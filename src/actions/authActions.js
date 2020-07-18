@@ -27,7 +27,7 @@ export const registerUser = (userData, history) => dispatch => {
 export const loginUser = userData => dispatch => {
     dispatch(toggleUserLoading());
     axios
-       .post("/api/users/login", userData)
+       .post("https://notit-api.herokuapp.com/api/users/login", userData)
        .then(res => {
           dispatch(resetPost());
           const { token } = res.data;
