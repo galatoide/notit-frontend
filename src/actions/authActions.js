@@ -9,7 +9,7 @@ import { setErrors } from "./errorActions";
 export const registerUser = (userData, history) => dispatch => {
     dispatch(toggleUserLoading());
     axios
-        .post('/api/users/signup', userData)
+        .post('https://notit-api.herokuapp.com/api/users/signup', userData)
         .then(res => {
             dispatch(toggleUserLoading());
             localStorage.setItem(
