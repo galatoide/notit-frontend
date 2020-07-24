@@ -15,7 +15,7 @@ const Navigationbar = ({ auth, onClick }) => (
          <Navbar.Brand>
             <img
                src={require("../../logo/notit.png")}
-               style={{ height: 130, width: 130 }}
+               style={{ height: 50}}
                className="d-inline-block align-top"
                alt=""
             />

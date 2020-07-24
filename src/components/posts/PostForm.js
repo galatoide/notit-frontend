@@ -60,6 +60,7 @@ class PostForm extends React.Component{
                      }}
                   />
                   <Textarea
+                     rows={4}
                      name="body"
                      placeholder="Write your Notit here..."
                      value={body}
