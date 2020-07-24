@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import getFormattedDate from "../../utils/getFormattedDate";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import "./post.scss";
 
 const ViewPost = ({ post, auth, onDelete, onEdit }) => {
@@ -9,13 +9,15 @@ const ViewPost = ({ post, auth, onDelete, onEdit }) => {
    return (
       <Container className="mt-4 viewPost">
          <Row>
+         <Card>
             <Col className="text-center postTitle">
-               <h2>{post.title}</h2>
+               <Card.Title>{post.title}</Card.Title>
             </Col>
+         </Card>
          </Row>
-         <Row className="my-4" style={{ whiteSpace: "pre-wrap" }}>
-            <Col>{post.body}</Col>
-         </Row>
+         <Card className="my-4" style={{ whiteSpace: "pre-wrap" }}>
+            <Card.Body>{post.body}</Card.Body>
+         </Card>
          <Row className="d-flex flex-column font-italic footerStyle">
             <Col>Created by : {post.author}</Col>
             <Col>Date: {postDate}</Col>

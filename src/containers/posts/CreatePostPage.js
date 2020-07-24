@@ -9,7 +9,7 @@ const CreatePostPage = ({ errors, createPost, loading, history }) => {
    const [post, setPost] = useState({
       title: "",
       body: "",
-      errors: {}
+      errors: {},
    });
 
    useEffect(() => {

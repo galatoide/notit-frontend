@@ -15,7 +15,7 @@ import { setErrors, clearErrors } from "./errorActions";
 export const createPost = (postData, history) => dispatch => {
    dispatch(togglePostLoading());
    axios
-      .post("https://notit-api.herokuapp.com/api/posts/create", postData)
+      .post("/api/posts/create", postData)
       .then(res => {
          dispatch({
             type: CREATE_POST,
@@ -33,7 +33,7 @@ export const createPost = (postData, history) => dispatch => {
 export const getPostByID = id => dispatch => {
    dispatch(togglePostLoading());
    axios
-      .get(`https://notit-api.herokuapp.com/api/posts/post/${id}`)
+      .get(`/api/posts/post/${id}`)
       .then(res => {
          dispatch({
             type: GET_POST,
@@ -52,7 +52,7 @@ export const getPostByID = id => dispatch => {
 export const getPostsByAuthor = author => dispatch => {
    dispatch(togglePostsLoading());
    axios
-      .get(`https://notit-api.herokuapp.com/api/posts/author/${author}`)
+      .get(`/api/posts/author/${author}`)
       .then(res => {
          dispatch({
             type: GET_POSTS,
@@ -69,7 +69,7 @@ export const getPostsByAuthor = author => dispatch => {
 export const getPosts = () => dispatch => {
    dispatch(togglePostsLoading());
    axios
-      .get(`https://notit-api.herokuapp.com/api/posts/`)
+      .get(`/api/posts/`)
       .then(res => {
          dispatch({
             type: GET_POSTS,
@@ -87,7 +87,7 @@ export const getPosts = () => dispatch => {
 export const updatePost = (id, postData, history) => dispatch => {
    dispatch(togglePostLoading());
    axios
-      .patch(`https://notit-api.herokuapp.com/api/posts/update/${id}`, postData)
+      .patch(`/api/posts/update/${id}`, postData)
       .then(res => {
          dispatch({
             type: UPDATE_POST,
@@ -105,7 +105,7 @@ export const updatePost = (id, postData, history) => dispatch => {
 export const deletePost = (id, history) => dispatch => {
    dispatch(togglePostLoading());
    axios
-      .delete(`https://notit-api.herokuapp.com/api/posts/delete/${id}`)
+      .delete(`/api/posts/delete/${id}`)
       .then(res => {
          dispatch({
             type: DELETE_POST,

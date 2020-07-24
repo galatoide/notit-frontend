@@ -4,8 +4,11 @@
 
 .grid-container {
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(260px, 400px));
+   // grid-template-columns: repeat(auto-fit, minmax(260px, 400px));
+   // grid-template-columns: 33% 33% 33%;
+   grid-template-columns: repeat(auto-fit, minmax(25%, 32.6% ));
    grid-gap: 1em;
+   margin-bottom: 50px;  // to see footer
 }
 
 a:link {
@@ -24,20 +27,38 @@ a:link {
 // ######### Post ############
 
 .postCover {
-   background: $themeColor;
-   color: $light;
+   // background: $themeColor;
+   background-image: url('../../bgimages/bg-1.jpg');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   background-position: center;
+
+   color: $light;  // $light
+   text-shadow: 2px 2px 5px black;
 }
 
 // ############# ViewPost ##############
 
 .viewPost {
    overflow-wrap: break-word;
+   margin-bottom: 50px;
 }
 
 .postTitle {
-   color: $primaryColor;
+   // color: $primaryColor;
+   color: white;
 }
 
 .footerStyle {
-   color: $subtitleColor;
+   // color: $subtitleColor;
+   color: $lightgrey;
+}
+
+.card{
+   background-color: #343A40;
+}
+
+.text-muted{
+   color: white !important;
 }

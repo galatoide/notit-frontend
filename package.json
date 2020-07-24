@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
     "is-empty": "^1.2.0",
+    "jquery": "^3.5.1",
     "jwt-decode": "^2.2.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
@@ -18,7 +19,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sentiment": "^5.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,7 +30,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://notit-api.herokuapp.com/",
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },

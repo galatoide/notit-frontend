@@ -6,7 +6,8 @@
       return (
          <div style={{ backgroundColor: "lightgrey", overflow: "hidden" }}>
             <ProgressBar
-               style={{ height: 3, background: "lightgrey" }}
+            animated
+               style={{ height: 15, background: "lightgrey" }}
                now={75}
                className="progressBar"
                variant="info"

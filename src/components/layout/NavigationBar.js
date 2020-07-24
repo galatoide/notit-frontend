@@ -14,12 +14,11 @@ const Navigationbar = ({ auth, onClick }) => (
       <Link to="/blog">
          <Navbar.Brand>
             <img
-               src="https://react-bootstrap.github.io/logo.svg"
-               style={{ height: 30, width: 30 }}
+               src={require("../../logo/notit.png")}
+               style={{ height: 130, width: 130 }}
                className="d-inline-block align-top"
                alt=""
             />
-            {" Notit "}
          </Navbar.Brand>
       </Link>
       <Nav className="ml-auto">

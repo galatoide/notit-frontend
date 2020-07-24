@@ -36,7 +36,7 @@ const Blog = ({ posts, auth }) => {
                   <Form.Group controlId="searchBar">
                      <Form.Control
                         type="text"
-                        placeholder="Search Post..."
+                        placeholder="Search Notit..."
                         style={{ height: 40 }}
                         ref={inputRef}
                         onChange={handleChange}
@@ -58,7 +58,7 @@ const Blog = ({ posts, auth }) => {
                   className="d-flex flex-column justify-content-center align-items-center"
                >
                   {" "}
-                  <p className="text-secondary h3">No Posts Found !</p>
+                  <p className="text-secondary h3">No Notits Found !</p>
                </Container>
             )
          )}

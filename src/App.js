@@ -19,6 +19,8 @@ import ViewPostPage from "./containers/posts/ViewPostPage";
 import CreatePostPage from "./containers/posts/CreatePostPage";
 import UpdatePostPage from "./containers/posts/UpdatePostPage";
 
+import Footer from '../src/components/layout/Footer'
+
 if (localStorage.jwtToken) {
    const token = localStorage.jwtToken;
    setAuthToken(token);
@@ -27,7 +29,7 @@ if (localStorage.jwtToken) {
    const currentTime = Date.now() / 1000;
    if (decoded.exp < currentTime) {
       store.dispatch(logoutUser());
-      window.location.href = "./loginPage";
+      window.location.href = "./components/layout/Landing.js";
    }
 }
 
@@ -56,6 +58,7 @@ const App = () => {
                <Route path="/blog/:author" component={BlogPage} />
                <Redirect from="*" to="/" />
             </Switch>
+            <Footer />
          </BrowserRouter>
       </Provider>
    );
