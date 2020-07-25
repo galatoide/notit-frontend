@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Form, Button, Container, Row, Col, OverlayTrigger, Popover, Tooltip } from "react-bootstrap";
 import Input from "../form/Input";
 import Textarea from "../form/Textarea";
 
@@ -14,7 +14,7 @@ class PostForm extends React.Component{
          sentimentScore: null,
          generalSentiment: null
       };
-      this.findSentiment = this.findSentiment.bind(this)
+      this.findSentiment = this.findSentiment.bind(this)       
    }
 
    findSentiment(e) {
@@ -33,14 +33,17 @@ class PostForm extends React.Component{
          })
       } else {
          this.setState({
-            generalSentiment: 'Neutral 😐'
+            generalSentiment: 'Neutral 😐',
          })
       }
    }
 
+   
+
    render(){
    const { post, onChange, onBlur, loading, onSubmit } = this.props;
    const { title, body, errors } = post;
+   
    return (
       <Container>
          <Row>
@@ -86,11 +89,39 @@ class PostForm extends React.Component{
                      {this.state.sentimentScore !== '' &&
                         <Col>
                            {/* <textarea onChange={this.findSentiment} /> */}
-                           <p>Sentiment Score: {this.state.sentimentScore}</p>
-                       
-                           <p>General Sentiment: {this.state.generalSentiment}</p>
+                           <OverlayTrigger
+                           placement='left'
+                           overlay={
+                           <Tooltip>
+                              Positive words provide good scores above zero.
+                              <br/>
+                              Negative words give bad scores below zero.
+                           </Tooltip>
+                           }
+                        >
+                           <Button variant="info">Sentiment Score: {this.state.sentimentScore}</Button>
+                        </OverlayTrigger>
+                        
+                           {/* <p>Sentiment Score: {this.state.sentimentScore}</p>
+                           
+                           <p>General Sentiment: {this.state.generalSentiment}</p> */}
+
+                           <br/>
+                           <br/>
+                           <OverlayTrigger
+                           placement='left'
+                           overlay={
+                           <Tooltip>
+                              Overall perception the reader gets from the text itself.
+                           </Tooltip>
+                           }
+                        >
+                           <Button variant="info">General Sentiment: {this.state.generalSentiment}</Button>
+                        </OverlayTrigger>
                         </Col>
+                        
                      }
+                     
                   </Row>
                </Form>
                </Col>
